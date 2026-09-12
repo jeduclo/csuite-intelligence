@@ -1,41 +1,36 @@
-# csuite-intelligence
-Forward-looking executive decision intelligence platform. Built with Next.js 14, TypeScript, DuckDB-Wasm, ONNX Runtime Web, and Tailwind CSS. Runs fully in-browser with zero server-side storage.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Getting Started
 
+First, run the development server:
 
-# C-Suite Intelligence Platform
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-A production-grade, forward-looking executive decision intelligence platform designed to bridge internal ERP transactional data with macroeconomic indicators and predictive machine learning. 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-All heavy analytics—including SQL querying, feature engineering, and inference—run **entirely in the browser** via DuckDB-Wasm and ONNX Runtime Web.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 🚀 Key Features
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-* **CFO Overview & Signal Tiling:** Real-time health signals covering cash runways, covenant risk (DSCR), and gross margin compression.
-* **In-Browser Analytical Pipeline:** Validates and ingests large ERP datasets (`orders`, `ar_aging`, `ap`, `payroll`) through Zod schemas directly into an in-memory DuckDB instance.
-* **Macro Intelligence:** Integrates live public datasets (Bank of Canada Valet API, Statistics Canada WDS API, and TSX sector ETFs) to dynamically classify economic cycle phases and market risk stances.
-* **Predictive & Prescriptive Views:** Combines XGBoost forecasting with actionable prescriptive banners to guide C-suite decision-making.
+## Learn More
 
-## 🛠 Tech Stack
+To learn more about Next.js, take a look at the following resources:
 
-* **Framework:** Next.js 14 (App Router) + TypeScript
-* **Styling:** Tailwind CSS (Custom Dark Navy Theme + JetBrains Mono metrics)
-* **Analytics & DB:** DuckDB-Wasm, Arquero
-* **Machine Learning:** ONNX Runtime Web (`onnxruntime-web`)
-* **Data Validation:** Zod
-* **Visualization:** Recharts, Lucide Icons
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 📂 Project Structure
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-```text
-src/
-├── app/                  # Next.js App Router pages (CFO, Cash, Macro, Simulator)
-├── components/
-│   ├── layout/           # Responsive desktop sidebar & mobile navigation bar
-│   └── ui/               # Reusable design system components (KPICard, InsightBanner)
-├── data/
-│   ├── erp/              # Synthetic transactional data (orders, AR, AP, payroll)
-│   └── macro/            # Macroeconomic feeds (BoC, StatCan, TSX sector ETFs)
-└── lib/
-    ├── db/               # DuckDB-Wasm singleton init and ERP data loader hook
-    └── schema/           # Zod data validation schemas
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
