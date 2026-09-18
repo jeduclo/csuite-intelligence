@@ -191,7 +191,7 @@ export default function HomePage() {
                   <SignalDot signal={s.signal} />
                   <p className="text-xs text-signal-muted leading-tight">{s.label}</p>
                 </div>
-                <p className="font-mono font-semibold text-lg" style={{ color }}>
+                <p className="font-mono font-semibold text-lg" style={{ color: colour }}>
                   {s.value}
                 </p>
                 <p className="text-xs mt-1" style={{ color: `${colour}CC` }}>
