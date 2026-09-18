@@ -519,7 +519,7 @@ export default function SimulatorPage() {
               />
               <Tooltip
                 contentStyle={tooltipBase}
-                formatter={(v: any, name: string) => [
+                formatter={(v: any, name: any) => [
                   `${Number(v) >= 0 ? "+" : ""}$${Math.abs(Number(v)).toFixed(2)}M`,
                   name === "positive" ? "Upside" : "Downside",
                 ]}

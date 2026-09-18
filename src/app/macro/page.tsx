@@ -306,7 +306,7 @@ export default function MacroPage() {
             <YAxis domain={[1.0, 3.5]} {...axisProps} tickFormatter={(v) => `${v}%`} />
             <Tooltip
               contentStyle={tooltipBase}
-              formatter={(v: any, name: string) => [
+              formatter={(v: any, name: any) => [
                 `${Number(v).toFixed(2)}%`,
                 name === "actual" ? "Actual" : name === "hold" ? "Hold" : "Cut",
               ]}
@@ -357,7 +357,7 @@ export default function MacroPage() {
               <XAxis dataKey="tenor" {...axisProps} />
               <YAxis domain={[1.5, 5.5]} {...axisProps} tickFormatter={(v) => `${v}%`} />
               <Tooltip contentStyle={tooltipBase}
-                formatter={(v: any, name: string) => [
+                formatter={(v: any, name: any) => [
                   `${Number(v).toFixed(2)}%`,
                   name === "current" ? "Current" : "6M Ago",
                 ]}
@@ -440,7 +440,7 @@ export default function MacroPage() {
             <XAxis dataKey="month" {...axisProps} tick={{ fill: C.muted, fontSize: 10 }} interval={1} />
             <YAxis {...axisProps} tickFormatter={(v) => `${v}%`} />
             <Tooltip contentStyle={tooltipBase}
-              formatter={(v: any, name: string) => [
+              formatter={(v: any, name: any) => [
                 `${Number(v).toFixed(2)}%`,
                 name === "cpi" ? "CPI (headline)" : "IPPI (input costs)",
               ]}

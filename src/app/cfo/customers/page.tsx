@@ -501,7 +501,7 @@ export default function CustomerRiskPage() {
               <YAxis {...axisProps} tickFormatter={(v) => `${v}d`} domain={[15, 70]} />
               <Tooltip
                 contentStyle={tooltipBase}
-                formatter={(v: any, name: string) => [`${v}d`, name]}
+                formatter={(v: any, name: any) => [`${v}d`, name]}
               />
               <ReferenceLine
                 y={30}

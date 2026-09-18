@@ -403,7 +403,7 @@ export default function CFOOverviewPage() {
               />
               <Tooltip
                 contentStyle={tooltipStyle.contentStyle}
-                formatter={(val: number, name: string) => [
+                formatter={(val: any, name: any) => [
                   `${val?.toFixed(1)}%`,
                   name === "margin" ? "Gross Margin" : "IPPI YoY",
                 ]}
