@@ -53,7 +53,7 @@ const PHILOSOPHY = [
   {
     number: "04",
     title:  "Your data never leaves your device.",
-    desc:   "All analytical models run in the browser via ONNX Runtime Web and DuckDB-Wasm. No data is sent to a cloud inference endpoint. No vendor has access to your financials.",
+    desc:   "All analytical models run in the browser via ONNX Runtime Web and DuckDB-Wasm. No data is sent to a vendor cloud inference endpoint. No vendor or AI has access to your financials.",
     colour: C.purple,
   },
   {
@@ -74,7 +74,7 @@ const STACK = [
   {
     layer:    "Ingestion & Transform",
     colour:   C.blue,
-    items:    ["Azure Data Factory", "Azure Data Lake Gen2", "DBT Core (transformations)", "Zod schema validation"],
+    items:    ["Data Load Tool", "Azure Data Lake Gen2", "DBT Core (transformations)", "Zod schema validation"],
   },
   {
     layer:    "Analytics Engine",
@@ -84,7 +84,7 @@ const STACK = [
   {
     layer:    "Application",
     colour:   C.amber,
-    items:    ["Next.js 14 (App Router)", "TypeScript + Tailwind CSS", "Recharts / D3 (visualisation)", "ONNX Runtime Web (inference)"],
+    items:    ["Next.js 14 (App Router)", "TypeScript + Tailwind CSS", "Recharts / D3 (visualisation)", "ONNX Runtime Web (inference)", "PowerBI Pro"],
   },
   {
     layer:    "Deployment",
@@ -95,7 +95,7 @@ const STACK = [
 
 // ─── Client fit criteria ───────────────────────────────────────────────────
 const CLIENT_FIT = [
-  { yes: true,  label: "$10M–$500M CAD revenue business"                                  },
+  { yes: true,  label: "$10K–$500M CAD revenue business"                                  },
   { yes: true,  label: "Has an ERP (SAP, Dynamics, NetSuite, Sage, QuickBooks Enterprise)" },
   { yes: true,  label: "CFO or CEO who wants answers, not more dashboards"                 },
   { yes: true,  label: "Tired of building cash forecasts in Excel"                         },
@@ -156,14 +156,14 @@ export default function AboutPage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
             Built because the answers{" "}
             <span style={{ color: C.muted }}>executives actually need</span>
-            {" "}have never lived in an ERP.
+            {" "}are not all found in an ERP.
           </h1>
           <p className="text-lg text-signal-muted leading-relaxed">
-            C-Suite Intelligence is a decision platform built for CFOs, CEOs, and CROs
-            of mid-market Canadian businesses. We combine internal ERP data with external
+            C-Suite Intelligence is a decision intelligence solution built for CFOs, CEOs, and CROs
+            of organisations that need to answer questions using data. We combine internal ERP data with external
             macro signals and three ML engines to deliver predictive and prescriptive
             intelligence — at a cost that makes enterprise analytics accessible to any
-            business above $10M in revenue.
+            organisation.
           </p>
         </div>
       </section>
@@ -178,17 +178,14 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-5 text-signal-muted leading-relaxed">
               <p>
-                Every mid-market CFO has an ERP. It captures transactions with remarkable
+                Most organisations have an ERP. It captures transactions with remarkable
                 fidelity — every invoice, every payment, every journal entry. And yet, when
                 the CEO asks "what will our cash position be in 90 days?", the answer is
                 a spreadsheet built last Friday.
               </p>
               <p>
                 The problem isn't the data. It's that ERPs are designed to record the past,
-                not inform the future. They have no forecasting engine, no customer credit
-                scoring model, no macro awareness. They cannot tell you that a customer's
-                rising DSO combined with their sector's contraction means a 71% probability
-                of default in 60 days.
+                not inform the future. 
               </p>
               <p>
                 Enterprise platforms like Anaplan and Adaptive Insights can. But they cost
@@ -365,8 +362,7 @@ export default function AboutPage() {
               Built for a specific type of business.
             </h2>
             <p className="text-signal-muted leading-relaxed mb-8">
-              This platform is not for everyone. It is for CFOs and CEOs who are
-              done with spreadsheet forecasts, want answers before problems become
+              This solution is for everyone. It is for C-suites who want more than spreadsheet forecasts, want answers before problems become
               visible in their ERP, and refuse to pay enterprise software prices
               for a problem that can be solved for a fraction of the cost.
             </p>
@@ -461,11 +457,9 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-5 text-signal-muted leading-relaxed">
               <p>
-                C-Suite Intelligence was founded after years of watching mid-market
-                executives make high-stakes capital allocation decisions from Excel
-                models and last-month's ERP reports — while enterprise software
-                vendors charged them half a million dollars to not solve the
-                underlying problem.
+                C-Suite Intelligence was founded after years of watching 
+                executives make high-stakes decisions like capital allocation decisions from Excel
+                models and last-month's ERP reports — without the right tool for Risk Modeling & What-If Scenario analysis.
               </p>
               <p>
                 The platform is built on a simple conviction: the data to answer
@@ -509,7 +503,7 @@ export default function AboutPage() {
               {
                 icon:   "🏗",
                 title:  "Full-stack data architecture",
-                desc:   "Azure ADF · Data Lake · DuckDB · DBT · Next.js · ONNX — end to end.",
+                desc:   "DLT · Azure Data Lake · DuckDB · DBT · Next.js · ONNX — end to end.",
                 colour: C.blue,
               },
               {

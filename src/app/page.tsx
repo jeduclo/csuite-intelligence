@@ -56,7 +56,7 @@ const GAPS = [
 
 // ─── Platform pillars ──────────────────────────────────────────────────────
 const PILLARS = [
-  { icon: "📍", title: "Know where you stand",    desc: "Real-time financial health across cash, margin, covenant, and credit risk — in one view."            },
+  { icon: "📍", title: "Know where you stand",    desc: "Near real-time financial health across cash, margin, covenant, and credit risk — in one view."            },
   { icon: "🔭", title: "See what's coming",        desc: "Chronos and XGBoost models give you probabilistic forecasts, not point estimates."                   },
   { icon: "🎯", title: "Know what to do",          desc: "Every dashboard surfaces a recommended action — not just a number."                                  },
   { icon: "🌐", title: "Macro-aware",              desc: "BoC rates, yield curve, StatCan data, and TSX sector rotation baked in — updated weekly."            },
@@ -211,10 +211,10 @@ export default function HomePage() {
             The Gap
           </p>
           <h2 className="text-3xl font-bold text-white mb-3">
-            Every CFO knows all the answers aren't in the ERP.
+            Most of the answers for decision making aren't in standard ERP software.
           </h2>
           <p className="text-signal-muted mb-12 max-w-2xl">
-            Here's what the platform answers that your ERP never will.
+            Our solution can help answer questions that your standard ERP does not.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -280,8 +280,8 @@ export default function HomePage() {
             See it running on real data.
           </h2>
           <p className="text-signal-muted mb-12 max-w-2xl">
-            Built on a live database. Every number is computed from actual ERP
-            transactions, macro API feeds, and ML models running in-browser.
+            Every number is computed from simulated ERP
+            transactions, real macro API feeds, and ML models running in-browser.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -295,7 +295,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-3">CFO Intelligence App</h3>
               <p className="text-signal-muted text-sm mb-6 leading-relaxed">
-                6 pages. 12 questions your ERP cannot answer. Cash forecasting,
+                6 pages. 12 sample questions our solution helps you answer. Cash forecasting,
                 covenant tracking, customer default scoring, what-if simulation —
                 all in one dashboard.
               </p>
@@ -532,9 +532,9 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             {[
-              { value: "~$150",        unit: "CAD/month",   desc: "Full infrastructure cost — ADF, DLT, Data Lake, DuckDB, Azure SQL, DBT, Power BI Pro" },
+              { value: "~$150",        unit: "CAD/month",   desc: "Optimized Cloud & Edge-Compute Data Architecture — DLT, Azure Data Lake, DuckDB, Azure SQL, DBT, Power BI Pro, Next.Js" },
               { value: "$200K–$500K",  unit: "per year",    desc: "What comparable platforms charge — Anaplan, Adaptive, SAP Analytics — for the same capability" },
-              { value: "60 sec",       unit: "or less",     desc: "Time for a CFO to answer any of 12 questions the ERP cannot touch" },
+              { value: "60 sec",       unit: "or less",     desc: "Time for a CFO to answer any Strategic Forecasting & Decision Optimization question, run Risk Modeling & What-If Scenarios" },
             ].map((r) => (
               <div key={r.value}>
                 <p className="font-mono text-4xl font-bold text-white mb-1">{r.value}</p>
