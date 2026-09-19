@@ -18,6 +18,7 @@ const C = {
   muted: "#A0B4CC",
   card:  "#1A3560",
   grid:  "#1E3A6E",
+  purple: "#7C3AED",
 };
 
 // ─── Live signal ticker data (matches the actual dashboard values) ─────────
@@ -351,6 +352,172 @@ export default function HomePage() {
                 style={{ borderColor: C.grid, color: C.muted }}
               >
                 Launch Macro Demo →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            {/* ── Causal Inference / What-If ───────────────────────────────── */}
+      <section className="px-6 py-20 border-t border-navy-border">
+        <div className="max-w-6xl mx-auto">
+
+          {/* Header */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-widest mb-3"
+                style={{ color: C.blue }}>
+                Prescriptive Intelligence
+              </p>
+              <h2 className="text-3xl font-bold text-white mb-5">
+                Don't just forecast.{" "}
+                <span style={{ color: C.green }}>Model the intervention.</span>
+              </h2>
+              <p className="text-signal-muted leading-relaxed mb-6">
+                Most platforms tell you where you'll end up. Ours tells you
+                what happens if you pull a lever — and by exactly how much.
+              </p>
+              <p className="text-signal-muted leading-relaxed mb-8">
+                Our What-If Simulator is powered by{" "}
+                <span className="text-white font-medium">DoubleML</span>
+                {" "}— a causal inference framework that estimates the true
+                treatment effect of each intervention, controlling for
+                confounders like macro conditions, seasonality, and customer
+                concentration. Unlike a sensitivity table, these are{" "}
+                <span className="text-white font-medium">causal estimates</span>
+                , not correlations.
+              </p>
+              <Link
+                href="/cfo/simulator"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
+                style={{ background: C.blue }}
+              >
+                Open the Simulator →
+              </Link>
+            </div>
+
+            {/* Lever showcase */}
+            <div className="space-y-4">
+              {[
+                {
+                  lever:   "Price +5%",
+                  outcome: "+4.85% revenue · +1.8pp gross margin",
+                  note:    "Price elasticity −0.55 · some volume erosion offset",
+                  colour:  C.blue,
+                  icon:    "💰",
+                },
+                {
+                  lever:   "Marketing spend +30%",
+                  outcome: "+2.1% revenue · −2.7pp gross margin",
+                  note:    "Diminishing returns above +10% · COGS offset",
+                  colour:  C.purple,
+                  icon:    "📣",
+                },
+                {
+                  lever:   "Headcount −10%",
+                  outcome: "−2.1% revenue · +1.4pp gross margin",
+                  note:    "Capability loss modelled · SG&A savings offset",
+                  colour:  C.amber,
+                  icon:    "👥",
+                },
+                {
+                  lever:   "BoC rate +200bps",
+                  outcome: "+$76K/quarter debt service · −$0.30M cash",
+                  note:    "Applied to floating-rate facilities only",
+                  colour:  C.red,
+                  icon:    "🏦",
+                },
+              ].map((item) => (
+                <div
+                  key={item.lever}
+                  className="rounded-xl p-4 border flex items-start gap-4"
+                  style={{
+                    borderColor: `${item.colour}25`,
+                    background:  `${item.colour}08`,
+                  }}
+                >
+                  <span className="text-xl mt-0.5">{item.icon}</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                      <p className="font-semibold text-sm text-white">{item.lever}</p>
+                      <p className="font-mono text-xs font-medium"
+                        style={{ color: item.colour }}>
+                        {item.outcome}
+                      </p>
+                    </div>
+                    <p className="text-xs text-signal-muted mt-1">{item.note}</p>
+                  </div>
+                </div>
+              ))}
+
+              {/* DoubleML badge */}
+              <div className="rounded-xl p-4 border flex items-center gap-3 mt-2"
+                style={{ borderColor: C.grid, background: C.card }}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
+                  style={{ background: `${C.blue}20` }}>
+                  <span className="text-sm">⚗️</span>
+                </div>
+                <div>
+                  <p className="text-xs font-medium text-white">
+                    Powered by DoubleML — Partially Linear Regression
+                  </p>
+                  <p className="text-xs text-signal-muted mt-0.5">
+                    Causal treatment effect estimation · confounders controlled ·
+                    ONNX inference runs in-browser — your data never leaves your device
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scenario comparison strip */}
+          <div className="mt-14 rounded-2xl border overflow-hidden"
+            style={{ borderColor: C.grid }}>
+            {/* Header row */}
+            <div className="grid grid-cols-4 text-xs font-medium uppercase tracking-wider px-6 py-3 border-b"
+              style={{ borderColor: C.grid, background: C.card }}>
+              <span className="text-signal-muted">Metric</span>
+              <span className="text-signal-muted text-center">Baseline</span>
+              <span className="text-center" style={{ color: C.blue }}>Price +5% Scenario</span>
+              <span className="text-center" style={{ color: C.red }}>Rate +200bps Stress</span>
+            </div>
+            {[
+              { label: "Quarterly Revenue",  base: "$4.22M", scen: "$4.43M", stress: "$4.22M" },
+              { label: "Gross Margin",       base: "34.2%",  scen: "36.0%",  stress: "34.2%"  },
+              { label: "EBITDA",             base: "$1.18M", scen: "$1.46M", stress: "$1.06M" },
+              { label: "Debt Service / Qtr", base: "$380K",  scen: "$380K",  stress: "$456K"  },
+              { label: "DSCR",               base: "0.78×",  scen: "0.96×",  stress: "0.58×"  },
+            ].map((row, i) => (
+              <div
+                key={row.label}
+                className="grid grid-cols-4 px-6 py-3 border-b text-sm"
+                style={{
+                  borderColor: C.grid,
+                  background: i % 2 === 0 ? "transparent" : `${C.card}80`,
+                }}
+              >
+                <span className="text-signal-muted">{row.label}</span>
+                <span className="font-mono text-white text-center">{row.base}</span>
+                <span className="font-mono text-center font-medium" style={{ color: C.green }}>
+                  {row.scen}
+                </span>
+                <span className="font-mono text-center" style={{ color: C.red }}>
+                  {row.stress}
+                </span>
+              </div>
+            ))}
+            {/* Footer CTA */}
+            <div className="px-6 py-4 flex items-center justify-between"
+              style={{ background: C.card }}>
+              <p className="text-xs text-signal-muted">
+                All outputs update instantly as you move the sliders — no backend, no wait.
+              </p>
+              <Link
+                href="/cfo/simulator"
+                className="text-xs font-medium hover:opacity-80 transition-opacity"
+                style={{ color: C.blue }}
+              >
+                Try it live →
               </Link>
             </div>
           </div>

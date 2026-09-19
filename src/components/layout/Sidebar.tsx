@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 
 const NAV_ITEMS = [
+  { href: "/",               label: "Home",             icon: "🏠" },
   { href: "/cfo",            label: "CFO Overview",     icon: "📊" },
   { href: "/cfo/cash",       label: "Cash Forecast",    icon: "💵" },
   { href: "/cfo/revenue",    label: "Revenue",          icon: "📈" },
@@ -24,12 +25,12 @@ export function Sidebar() {
       {/* ── Desktop sidebar (hidden on mobile) ── */}
       <aside className="hidden lg:flex flex-col w-56 min-h-screen bg-navy-card border-r border-navy-border px-3 py-6">
         {/* Logo */}
-        <div className="px-2 mb-8">
-          <p className="text-white font-semibold text-sm leading-tight">
+        <Link href="/" className="px-2 mb-8 block group">
+          <p className="text-white font-semibold text-sm leading-tight group-hover:text-signal-blue transition-colors">
             C-Suite Intelligence
           </p>
           <p className="text-signal-muted text-xs mt-0.5">Decision Platform</p>
-        </div>
+        </Link>
 
         {/* Nav links */}
         <nav className="flex flex-col gap-1">
